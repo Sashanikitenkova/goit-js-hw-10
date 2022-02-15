@@ -1,18 +1,3 @@
-
-// export default {fetchCountries};
-
-
-// function fetchCountries(countryId) {
-   
-//     console.log(countryId);
-//     const url = `https://restcountries.com/v2/name/${countryId}?fields=name,capital,population,flags,languages`;
-  
-//     return fetch(url)
-//       .then(response => {
-//           return response.json();
-//       });
-//   };
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 export default class NewsApiService {
     constructor() {
         this.country = '';
@@ -25,11 +10,10 @@ export default class NewsApiService {
         return fetch(url)
           .then(response => {
               if (!response.ok) {
-                  throw new Error(response.status);
-              }
+                  throw new Error(`Network response was not ok. Status code: ${response.status}.`);
+              };
               return response.json();
-          })
-          .catch(Notify.failure('Oops, there is no country with that name'));
+          });
       };
 
       get nameCountry() {
@@ -39,8 +23,21 @@ export default class NewsApiService {
       set nameCountry(newCountry) {
           this.country = newCountry;
       }
-    
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

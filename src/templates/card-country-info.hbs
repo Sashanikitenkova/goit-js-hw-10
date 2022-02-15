@@ -1,13 +1,15 @@
 {{#each this}}
 
 <div class="">
-    <img class="", src={{this.flags.svg}}, alt="flag", width="", height="">
-    <h2 class="country-name"> {{this.name.official}}</h2>
-      <ul class="country-properties">
+    <img class="ff" src={{this.flags.svg}} alt="flag" width="20" height="16">
+    <h2 class="country-name"> {{this.name}}</h2>
+
+      <ul class="country-list">
         <li class="">Capital: {{this.capital}}</li>
         <li class="">Population: {{this.population}}</li>
-        <li class="">Languages: {{#each this.languages}}{{#if @last}}{{this}}{{else}}, {{/if}}{{this}}{{/each}}</li>
+        <li class="">Languages: {{#each this.languages}}{{#if @last}}{{this.name}}{{else}}{{this.name}}, {{/if}}{{/each}}</li>
       </ul>
-</div>   
+  </div>     
+  
 
 {{/each}}
