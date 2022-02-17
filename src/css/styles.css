@@ -20,7 +20,26 @@ body {
 }
 
 
-.country-list {
+h2 {
+  margin: 0;
+}
+.coun {
   list-style-type: none;
+  align-items: center;
+  display: flex;
+}
+
+.name-flags {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.country-info {
+  list-style-type: none;
+}
+
+.fl {
+  margin-right: 30px;
 }
 
