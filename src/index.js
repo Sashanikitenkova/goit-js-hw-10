@@ -27,7 +27,7 @@ function onSearch(e) {
         if (data.length > 10) {
             clearListCountries();
             return Notify.info(`Too many matches found. Please enter a more specific name.`);
-        } else if (data.length >= 2 && data.length =< 10) {
+        } else if (data.length >= 2 && data.length <= 10) {
             clearListCountries();
             return countryList.insertAdjacentHTML('beforeend', countriesCards(data));
         } else if (data.length === 1) {
