@@ -8,7 +8,7 @@ import NewsApiService from './fetchCountries';
 const cardContainer = document.querySelector('.country-info');
 const countryList = document.querySelector('.country-list');
 const inputEl = document.querySelector("#search-box");
-const DEBOUNCE_DELAY = 3000;
+const DEBOUNCE_DELAY = 300;
 const newsApiService = new NewsApiService();
 
 inputEl.addEventListener("input", debounce(onSearch, DEBOUNCE_DELAY));
@@ -27,7 +27,7 @@ function onSearch(e) {
         if (data.length > 10) {
             clearListCountries();
             return Notify.info(`Too many matches found. Please enter a more specific name.`);
-        } else if (data.length >= 2 && data.length < 10) {
+        } else if (data.length >= 2 && data.length =< 10) {
             clearListCountries();
             return countryList.insertAdjacentHTML('beforeend', countriesCards(data));
         } else if (data.length === 1) {
